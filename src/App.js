@@ -9,6 +9,14 @@ import axios from "axios";
 //style
 import "./App.css";
 
+import styled from 'styled-components';
+
+const PageDiv = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
 function App() {
   const [image, setImage] = useState([]);
   const [date, setDate] = useState([]);
@@ -36,16 +44,16 @@ function App() {
   }, [date]);
 
   return (
-    <div className="App">
+    <PageDiv className="App">
       <h1>Photo of the Day!</h1>
-      <Card
-        image={image}
-        date={date}
-        title={title}
-        exp={exp}
-        changeDate={() => changeDate(document.getElementById("date").value)}
-      />
-    </div>
+        <Card
+          image={image}
+          date={date}
+          title={title}
+          exp={exp}
+          changeDate={() => changeDate(document.getElementById("date").value)}
+        />
+    </PageDiv>
   );
 }
 
