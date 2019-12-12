@@ -16,7 +16,7 @@ function App() {
   const [title, setTitle] = useState([]);
 
   //Handler to be attached to an input field
-  const dateChange = newDate => {
+  const changeDate = newDate => {
     setDate(newDate);
   };
 
@@ -43,7 +43,7 @@ function App() {
         date={date}
         title={title}
         exp={exp}
-        dateChange={() => dateChange(document.getElementById("date").value)}
+        changeDate={() => changeDate(document.getElementById("date").value)}
       />
     </div>
   );
